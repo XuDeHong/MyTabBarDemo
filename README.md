@@ -2,4 +2,4 @@
 
 效果图：
 
-![image]（https://github.com/XuDeHong/MyTabBarDemo/blob/master/screenshot.jpg)
+![image](https://github.com/XuDeHong/MyTabBarDemo/blob/master/screenshot.jpg)
