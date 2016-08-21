@@ -41,9 +41,10 @@
     [self setValue:myTabBar forKey:@"tabBar"];
 }
 
--(void)viewWillAppear:(BOOL)animated
+
+-(void)viewDidLayoutSubviews
 {
-    [super viewWillAppear:animated];
+    [super viewDidLayoutSubviews];
     //设置TabBar的TintColor
     self.tabBar.tintColor = [UIColor colorWithRed:89/255.0 green:217/255.0 blue:247/255.0 alpha:1.0];
 }
