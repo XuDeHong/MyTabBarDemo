@@ -2,4 +2,4 @@
 
 效果图：
 
-![](https://github.com/XuDeHong/MyTabBarDemo/raw/master/screenshot.jpg)
+![screenshot](https://github.com/XuDeHong/MyTabBarDemo/raw/master/screenshot.jpg "screenshot")
