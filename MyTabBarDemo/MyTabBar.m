@@ -9,7 +9,9 @@
 #import "MyTabBar.h"
 #import "UIView+Category.h"
 
+static const NSUInteger kTabCount = 3;  //Tab数量
 #define AddButtonMargin 10
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 @interface MyTabBar()
 
@@ -73,11 +75,12 @@
         }
     }
     
-    //设置“+”按钮的位置
-    self.addButton.centerX = self.centerX;
-    self.addButton.centerY = self.height * 0.5 - 1.5 * AddButtonMargin;
     //设置“+”按钮的大小为图片的大小
     self.addButton.size = CGSizeMake(self.addButton.currentBackgroundImage.size.width, self.addButton.currentBackgroundImage.size.height);
+    
+    //设置“+”按钮的位置
+    self.addButton.centerX = self.centerX;
+    self.addButton.centerY = self.height * 0.5 - (iPhoneX?3:1.5)*AddButtonMargin;
     
     //创建并设置“+”按钮下方的文本为“添加”
     UILabel *addLbl = [[UILabel alloc] init];
@@ -99,14 +102,14 @@
     Class class = NSClassFromString(@"UITabBarButton");
     for (UIView *btn in self.subviews) {//遍历TabBar的子控件
         if ([btn isKindOfClass:class]) {//如果是系统的UITabBarButton，那么就调整子控件位置，空出中间位置
-            //每一个按钮的宽度等于TabBar的三分之一
-            btn.width = self.width / 3;
+            //每一个按钮的宽度等于TabBar的宽度除以Tab数量
+            btn.width = self.width / kTabCount;
             
             btn.x = btn.width * btnIndex;
             
             btnIndex++;
-            //如果索引是1(即“+”按钮)，直接让索引加一
-            if (btnIndex == 1) {
+            //如果索引是中间一个(即居中按钮)，直接让索引加一
+            if (btnIndex == kTabCount/2) {
                 btnIndex++;
             }
             
