@@ -73,11 +73,12 @@
         }
     }
     
+    //设置“+”按钮的大小为图片的大小
+    self.addButton.size = CGSizeMake(self.addButton.currentBackgroundImage.size.width, self.addButton.currentBackgroundImage.size.height);
+    
     //设置“+”按钮的位置
     self.addButton.centerX = self.centerX;
     self.addButton.centerY = self.height * 0.5 - 1.5 * AddButtonMargin;
-    //设置“+”按钮的大小为图片的大小
-    self.addButton.size = CGSizeMake(self.addButton.currentBackgroundImage.size.width, self.addButton.currentBackgroundImage.size.height);
     
     //创建并设置“+”按钮下方的文本为“添加”
     UILabel *addLbl = [[UILabel alloc] init];
